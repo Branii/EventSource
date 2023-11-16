@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Open Console to inspect Event Messages</h1>
 </body>
 <script src="index.js"></script>
 </html>
