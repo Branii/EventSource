@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+</body>
+<script>
+
+// connect to channel page on server
+const socket = new WebSocket('ws://localhost:8080'); // Replace with your server's WebSocket URL
+
+// Event listener for when the WebSocket connection is established
+socket.addEventListener('open', function (event) {
+  console.log('WebSocket connected');
+  // Send a message to the WebSocket server
+  socket.send('Hello Server, this is a message from the client!');
+});
+
+// Event listener for incoming messages from the WebSocket server
+socket.addEventListener('message', function (event) {
+  console.log('Message from server:', event.data);
+});
+
+// Event listener for WebSocket connection closure
+socket.addEventListener('close', function (event) {
+  console.log('WebSocket connection closed');
+});
+
+// Event listener for WebSocket connection errors
+socket.addEventListener('error', function (event) {
+  console.error('WebSocket error:', event);
+});
+
+   </script>
+</html>
